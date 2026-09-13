@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d0lk8grm7ogoy"]
+
+[ext_resource type="Script" uid="uid://dwoe7hvi2h78o" path="res://win_screen.gd" id="1_l5t5q"]
+[ext_resource type="Texture2D" uid="uid://73rksdolagd1" path="res://Starships win screen.png" id="2_1txte"]
+[ext_resource type="FontFile" uid="uid://cn2uyt2qrunsl" path="res://PressStart2P-Regular.ttf" id="3_26557"]
+[ext_resource type="AudioStream" uid="uid://yk1eorv70yhn" path="res://music for game.mp3" id="4_1txte"]
+
+[node name="WinScreen" type="Node2D" unique_id=1347566761]
+script = ExtResource("1_l5t5q")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=362664078]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_1txte")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="." unique_id=1389732192]
+offset_left = 897.0
+offset_top = 23.0
+offset_right = 1120.0
+offset_bottom = 114.0
+theme_override_fonts/font = ExtResource("3_26557")
+theme_override_font_sizes/font_size = 45
+text = "Menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=769211384]
+stream = ExtResource("4_1txte")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
